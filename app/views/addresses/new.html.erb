@@ -1,0 +1,23 @@
+<h1>CREATE YOUR ADDRESS</h1>
+
+<%= form_for @address do |f| %>
+
+  <div><%= f.label :line1 %><br />
+  <%= f.text_field :line1 %></div>
+ 
+  <div><%= f.label :line2 %><br />
+  <%= f.text_field :line2 %></div>
+
+  <div><%= f.label :city %><br />
+  <%= f.text_field :city %></div>
+
+  <div><%= f.label :state %><br />
+  <%= f.text_field :state %></div>
+
+  <div><%= f.label :zip %><br />
+  <%= f.text_field :zip %></div>
+
+
+
+  <div><%= f.submit "Create Address" %></div>
+<% end %>

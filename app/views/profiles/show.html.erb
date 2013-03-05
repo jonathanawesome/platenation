@@ -3,4 +3,6 @@
         
 	Your first name: <%= @profile.first_name %><br />
 	Your last name: <%= @profile.last_name %><br />
-	Your phone number: <%= @profile.phone %>
+	Your phone number: <%= @profile.phone %><br />
+	Your Address: <%= @profile.address.line1 %> <%= @profile.address.line2 %><br />
+	Your phone number: <%= @profile.address.city %>, <%= @profile.address.state %> <%= @profile.address.zip %> 

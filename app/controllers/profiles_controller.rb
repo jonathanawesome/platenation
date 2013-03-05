@@ -1,24 +1,8 @@
 class ProfilesController < ApplicationController
-  def index
-    @profile = Profile.all
-  end
-
-  def show
-    @profile = Profile.find(params[:id])
-  end
-
+  
   def new
     @profile = Profile.new
-  end
-
-  def update
-     @profile = Profile.find(params[:id])
-    if @profile.update_attributes(params[:profile])
-      flash[:notice] = "You updated your profile!"
-      redirect_to profile_path
-    else
-      render :action => :edit
-    end
+    @profile.build_address
   end
 
   def edit
@@ -34,8 +18,23 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def update
+    @profile = Profile.find(params[:id])
+    if @profile.update_attributes(params[:profile])
+      flash[:notice] = "You updated your profile!"
+      redirect_to @profile
+    else
+      render 'edit'
+    end
+  end
 
+  def index
+    @profile = Profile.all
+  end
 
-
-
+  def show
+    @profile = Profile.find(params[:id])
+  end
+ 
+  
 end

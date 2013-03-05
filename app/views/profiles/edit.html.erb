@@ -11,6 +11,20 @@
 
   <div><%= f.label :phone %><br />
   <%= f.text_field :phone %></div>
+	
+	  <%= f.fields_for :address do |builder| %>
+	  	<div><%= builder.label :line1 %><br />
+		<%= builder.text_field :line1 %></div>
+ 	 	<div><%= builder.label :line2 %><br />
+  		<%= builder.text_field :line2 %></div>
+   		<div><%= builder.label :city %><br />
+ 		<%= builder.text_field :city %></div>   		
+ 		<div><%= builder.label :state %><br />
+ 		<%= builder.text_field :state %></div>   		
+ 		<div><%= builder.label :zip %><br />
+ 		<%= builder.text_field :zip %></div>
+	  <% end -%>
+  
 
   <div><%= f.submit "UPDATE Profile" %></div>
 <% end %>

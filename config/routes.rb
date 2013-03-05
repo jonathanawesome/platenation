@@ -4,6 +4,7 @@ Platenation::Application.routes.draw do
   devise_for :users
 
   resources :profiles, :only => [:show, :new, :create, :index, :edit, :update]
+  resources :addresses, :only => [:show, :new, :create, :index, :edit, :update]
   
 
   match '/help',    to: 'pages#help'
